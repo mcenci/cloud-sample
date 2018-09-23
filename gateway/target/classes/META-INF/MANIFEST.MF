@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: gateway
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Michele-Fede
+Implementation-Vendor-Id: com.netsgroup
+Build-Jdk: 1.8.0_171
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/cloud-maury/gateway
+Created-By: Maven Integration for Eclipse
+

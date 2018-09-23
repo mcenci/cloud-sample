@@ -1,0 +1,8 @@
+spring:  profiles: default
+server:
+  port: 3000
+eureka:  instance:    hostname: eureka.netsgroup.com
+  client:    fetch-registry: false
+    register-with-eureka: false
+logging:  level:    com.netflix.eureka: OFF
+    com.netflix.discovery: OFF---spring:  profiles: eps-pri  application:    name: eureka-server-clustered   # ==> This is Service-Idserver:  port: 3001  eureka:  instance:    hostname: eureka0pri.netsgroup.com      client:    registerWithEureka: true    fetchRegistry: true           serviceUrl:      defaultZone: http://eureka0dr.netsgroup.com:3002/eureka/,http://eureka1pri.netsgroup.com:3003/eureka/ ---spring:  profiles: eps-dr  application:    name: eureka-server-clustered   # ==> This is Service-Id   server:  port: 3002eureka:  instance:    hostname: eureka0dr.netsgroup.com        client:    registerWithEureka: true    fetchRegistry: true           serviceUrl:      defaultZone: http://eureka0pri.netsgroup.com:3001/eureka/,http://eureka1pri.netsgroup.com:3003/eureka/---spring:  profiles: eps-pri-2  application:    name: eureka-server-clustered   # ==> This is Service-Id   server:  port: 3003eureka:  instance:    hostname: eureka1pri.netsgroup.com        client:    registerWithEureka: true    fetchRegistry: true           serviceUrl:      defaultZone: http://eureka0pri.netsgroup.com:3001/eureka/,http://eureka0dr.netsgroup.com:3002/eureka/

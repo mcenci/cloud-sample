@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: GENERIC-SERVICE # ==> This is Service-Id 
+eureka:
+  instance:
+    appname: GENERIC-SERVICE  # ==> This is a instance of ABC-SERVICE
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka.netsgroup.com:3000/eureka
+server:
+  port: 8081  
+  
+---
+spring:
+  profiles: eps-pri
+eureka:
+  instance:
+    appname: GENERIC-SERVICE  # ==> This is a instance of ABC-SERVICE
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka0pri.netsgroup.com:3001/eureka/
+server:
+  port: 8082   
+---
+spring:
+  profiles: eps-dr
+eureka:
+  instance:
+    appname: GENERIC-SERVICE  # ==> This is a instance of ABC-SERVICE
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka0dr.netsgroup.com:3002/eureka/
+server:
+  port: 8083 
+
+---
+spring:
+  profiles: eps-pri-2
+eureka:
+  instance:
+    appname: GENERIC-SERVICE  # ==> This is a instance of ABC-SERVICE
+  client:   
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka1pri.netsgroup.com:3003/eureka/
+server:
+  port: 8084
